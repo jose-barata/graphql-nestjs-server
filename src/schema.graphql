@@ -1,0 +1,27 @@
+type Customer {
+  id: Int!
+  firstName: String!
+  lastName: String!
+  taxId: Int!
+}
+
+type Product {
+  id: Int!
+  name: String!
+  cost: Int!
+  stock: Int!
+}
+
+type Query {
+  customers: [Customer]!
+  products: [Product]!
+}
+
+type Mutation {
+  createCustomer(firstName: String!, lastName: String!, taxId: Int!): Customer!
+  updateCustomer(id: Int!, firstName: String!, lastName: String!, taxId: Int!): Customer!
+  deleteCustomer(id: Int!): Boolean!
+  createProduct(id: Int!, name: String!, cost: Int!, stock: Int!): Product!
+  updateProduct(name: String!, cost: Int!, stock: Int!): Product!
+  deleteProduct(id: Int!): Boolean!
+}
