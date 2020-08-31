@@ -21,7 +21,7 @@ type Mutation {
   createCustomer(firstName: String!, lastName: String!, taxId: Int!): Customer!
   updateCustomer(id: Int!, firstName: String!, lastName: String!, taxId: Int!): Customer!
   deleteCustomer(id: Int!): Boolean!
-  createProduct(id: Int!, name: String!, cost: Int!, stock: Int!): Product!
-  updateProduct(name: String!, cost: Int!, stock: Int!): Product!
+  createProduct(name: String!, cost: Int!, stock: Int!): Product!
+  updateProduct(id: Int!, name: String!, cost: Int!, stock: Int!): Product!
   deleteProduct(id: Int!): Boolean!
 }

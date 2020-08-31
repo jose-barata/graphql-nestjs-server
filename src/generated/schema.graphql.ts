@@ -33,9 +33,9 @@ export abstract class IMutation {
 
     abstract deleteCustomer(id: number): boolean | Promise<boolean>;
 
-    abstract createProduct(id: number, name: string, cost: number, stock: number): Product | Promise<Product>;
+    abstract createProduct(name: string, cost: number, stock: number): Product | Promise<Product>;
 
-    abstract updateProduct(name: string, cost: number, stock: number): Product | Promise<Product>;
+    abstract updateProduct(id: number, name: string, cost: number, stock: number): Product | Promise<Product>;
 
     abstract deleteProduct(id: number): boolean | Promise<boolean>;
 }
