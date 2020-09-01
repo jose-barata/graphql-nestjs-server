@@ -13,7 +13,7 @@ export class ProductsResolver {
 
   @Mutation(returns => Product)
   async createProduct(@Args('name') name: string, @Args('cost') cost: number, @Args('stock') stock: number) {
-    const id = this.productsInMemoryDb.length;
+    const id = Math.max(...this.productsInMemoryDb.map((product: Product) => product.id), 0) + 1;
     const newProduct: Product = { id, name, cost, stock };
     this.productsInMemoryDb.push(newProduct);
     return newProduct;

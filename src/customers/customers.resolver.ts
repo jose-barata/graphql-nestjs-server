@@ -17,7 +17,7 @@ export class CustomersResolver {
     @Args('lastName') lastName: string,
     @Args('taxId') taxId: number
   ) {
-    const id = this.customersInMemoryDb.length;
+    const id = Math.max(...this.customersInMemoryDb.map((customer: Customer) => customer.id), 0) + 1;
     const newCustomer: Customer = { id, firstName, lastName, taxId };
     this.customersInMemoryDb.push(newCustomer);
     return newCustomer;
